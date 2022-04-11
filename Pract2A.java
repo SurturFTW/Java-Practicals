@@ -1,13 +1,10 @@
 public class Pract2A {
-    public static void main(String[] args) {
-    
-    String a = "1001";
-    String b = "0011";
-
-    Integer str1 = Integer.parseInt(a);
-    Integer str2 = Integer.parseInt(b);
-
-    System.out.println("String str1 = " + str1);
-    System.out.println("String str2 = " + str2);
+        public static void main(String[] args) {
+        String a = "101";
+        String b = "100"; 
+        int x = Integer.parseInt(a, 2);
+        int y = Integer.parseInt(b, 2);
+        int sum = x + y;
+        System.out.println("Addition of binary numbers is " + Integer.toBinaryString(sum));
     }
 }
