@@ -1,57 +1,36 @@
-import java.util.*;
-
-class Pract6C{
-  public void show(int m[][]){
-    for(int i = 0; i<3; i++){
-      System.out.println(" ");
-      for (int j = 0; j<3; j++){
-        System.out.print("  " + m[i][j] + "  ");
-      }
-    }
-    System.out.println("\n_____________________");
-  }
-
-  public void mul(int m1[][], int m2[][]){
-    int m[][] = new int[3][3];
-    for(int i = 0; i<3; i++){
-      for(int j = 0; j<3; j++){
-        for (int k = 0; k<3; k++){
-          m[i][j] += (m1[i][k] * m2[k][j]);
-        }
-      }
-    }
-    for(int i = 0; i<3; i++){
-      System.out.println(" ");
-      for (int j = 0; j<3; j++){
-        System.out.print(" " + (m[i][j]) + " ");
-      }
-    }
-    System.out.println("\n_____________________");
-}   
+public class Pract6C{
   public static void main(String[] args) {
-    int matrix1[][] = new int [3][3];
-    int matrix2[][] = new int [3][3];
-    Scanner sc = new Scanner(System.in);
-    for (int i = 0; i<3; i++){
-      for(int j = 0; j<3; j++){
-        System.out.println("Matrix 1" + "[" + (i+1) + "]" + "[" + (j+1) + "] = ");
-        matrix1[i][j] = sc.nextInt();
-      }
-    }
+    int a[][]={{1,2,3},{4,5,6},{7,8,9}};
+    int b[][]={{1,2,3},{4,5,6},{7,8,9}};
 
-    for (int i = 0; i<3; i++){
-      for(int j = 0; j<3; j++){
-        System.out.println("Matrix 2" + "[" + (i+1) + "]" + "[" + (j+1) + "] = ");
-        matrix2[i][j] = sc.nextInt();
+    System.out.println("Matrix A:");
+    for (int i=0;i<3;i++){
+      System.out.print(" ");
+      for(int j=0;j<3;j++){
+        System.out.print(" "+a[i][j]+" ");
+        }
+        System.out.println();
       }
-    }
-    
-    Pract6C m1 = new Pract6C();
-    System.out.println("Matrix 1 : ");
-    m1.show(matrix1);
-    System.out.println("Matrix 2 : ");
-    m1.show(matrix2);
-    System.out.println("Matrix After Multiplication : ");
-    m1.mul(matrix1, matrix2);
+
+      System.out.println("Matrix B:");
+        for (int i=0;i<3;i++){
+          System.out.print(" ");
+          for(int j=0;j<3;j++){
+            System.out.print(" "+b[i][j]+" ");
+          }
+        System.out.println();
+        }
+
+        System.out.println("Matrix Multiplication:");
+        int c[][]=new int[3][3];
+        for(int i=0;i<3;i++){
+          for(int j=0;j<3;j++){
+            for(int k=0;k<3;k++){
+              c[i][j]= c[i][j]+a[i][k]*b[k][j];
+            }
+            System.out.print(c[i][j]+" "); 
+        }
+       System.out.println();
+      } 
   }
 }
